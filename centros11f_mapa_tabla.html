@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Centros11F - mapa y tabla</title>
+
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/navigation-1.1/tabsets.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-providers-1.13.0/leaflet-providers_1.13.0.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-providers-plugin-2.2.0/leaflet-providers-plugin.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/datatables-binding-0.29/datatables.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/Edicion_2024_2025/web11F/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img
+src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
+<style type="text/css">
+
+h1 {
+  color: #00BCB4;
+}
+h2 {
+  color: #00BCB4;
+}
+h3 {
+  color: #00BCB4;
+}
+h4 {
+  color: #00BCB4;
+}
+h5 {
+  color: #00BCB4;
+}
+li {
+  color: #00BCB4;
+}
+</style>
+<div id="centros-11f" class="section level1">
+<h1>Centros-11F</h1>
+<p>¿Organizáis actividades internamente en vuestro centro educativo para
+celebrar el <a href="https://11defebrero.org/">Día de la Mujer y la Niña
+en la Ciencia</a>? Entonces sois un Centro11F.</p>
+<p>Si tenéis ya todo organizado, podéis comunicárnoslo a través del
+formulario que encontrarás en <a
+href="https://11defebrero.org/centros-educativos/">este enlace</a>.</p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a
+href="mailto:correccionesweb11F@gmail.com"
+class="email">correccionesweb11F@gmail.com</a></p>
+<p>Datos actualizados el 2025-02-05 con un total de 47 centros
+inscritos.</p>
+<hr />
+<div id="buscar-en-mapa" class="section level3">
+<h3><a href="#mapa-centros11f">Buscar en mapa</a></h3>
+</div>
+<div id="buscar-en-tabla" class="section level3">
+<h3><a href="#tabla-centros11f">Buscar en tabla</a></h3>
+</div>
+<div id="ver-todos" class="section level3">
+<h3><a href="centros11f_todos.html#detalles" target="_blank">Ver
+todos</a></h3>
+<hr />
+</div>
+<div id="mapa-centros11f" class="section level3">
+<h3>Mapa Centros11F</h3>
+<p>En este mapa interactivo puedes consultar las actividades programadas
+por los centros educativos, Centros11F. La localización de los centros
+en el mapa es aproximada, corresponde al código postal en el que se
+ubican.</p>
+<p>Si pinchas en cualquier icono podrás acceder a más información sobre
+cada actividad.</p>
+<p>Si tienes problema al visualizar el mapa, por favor, prueba con otro
+navegador.</p>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-06aa8482176c66c41ea2" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-06aa8482176c66c41ea2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[41.46805972980741,40.66484355854667,40.66484355854667,40.88081943458371,38.00199893642519,40.48043032882257,43.48317563254987,37.43405803422858,43.26386699268503,41.66789868288183,41.45111304140197,40.43241578639719,39.50829359330618,38.08724731619957,40.46051977850577,39.02765767709158,41.78888552709549,37.41033289146345,40.54348915493653,38.93779369994996,28.13843718869253,41.57864283901398,37.47467110097303,41.40235914806053,42.51090174511229,36.77342442353589,37.60039282695649,40.56864939696552,36.69776221941775,39.19342457706595,36.6313780607334,41.64260188843895,40.03615708933935,38.70836606913474,42.40094652561848,35.30418064166344,38.73106966376241,43.38500919180818,42.54717043666381,39.56020823281137,43.38151499432616,43.38151499432616,40.31188327129787,40.43422566884455,43.53835844386122,37.18043400206261,40.46989175647445],[-5.438610870363615,-3.749782795234513,-3.749782795234513,-5.582599013985226,-3.36260396648795,-4.242033081143171,-8.225922836974892,-5.984407529972008,-2.94017435488401,-0.906803708739594,2.221749913314473,-3.710761811244827,-0.411285647487135,-4.029273546297865,-3.709070683329128,-1.048038903335974,-0.861682098128038,-5.983859402157448,-4.179740083258864,-0.514220176073497,-15.43221818016051,-0.915772682853125,-5.102424303595528,2.156594330483966,-8.220176958102551,-2.806788485362533,-5.959030696796821,-3.628819759276422,-6.110073797781101,-2.610225988792391,-6.234467769886539,-0.878136382833364,-1.666074483877302,-6.409801352303892,-8.500004958862887,-2.957036683812291,-6.039775401752436,-4.395794342748959,-6.581864147973473,-0.655498331072225,-8.401594926995561,-8.401594926995561,-3.729139190652131,-4.100041457391637,-5.706511800991914,-3.738859729183838,-3.460392941949505],{"iconUrl":{"data":"https://raw.githubusercontent.com/11defebrero/assets/main/images/chincheta_gris.png","index":0},"iconWidth":20,"iconHeight":30,"iconAnchorX":10,"iconAnchorY":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<a href='centros11f_todos.html#referencia-0' target='_self'>IES Cardenal Pardo de Tavera<\/a><br/>\"Aislamiento y caracterización de bacterias con potencial como bioinoculantes\"<br/>Charla ","<a href='centros11f_todos.html#referencia-1' target='_self'>CEIP ÁNGEL LEÓN<\/a><br/>Centro 11F- 2025<br/>Taller","<a href='centros11f_todos.html#referencia-2' target='_self'>CEIP Ángel León<\/a><br/>\"¿Qué hace un médico?\"<br/>Taller","<a href='centros11f_todos.html#referencia-22' target='_self'>IESO QUERCUS<\/a><br/>Charla con científicas<br/>Charla","<a href='centros11f_todos.html#referencia-23' target='_self'>IES SAN JUAN DE LA CRUZ<\/a><br/>LA MUJER Y LA NIÑA EN  LA GEOLOGÍA<br/>Exposición;Proyecto;CONFERENCIA","<a href='centros11f_todos.html#referencia-25' target='_self'>ceip Ntra. Señora de Navahonda<\/a><br/>INSPIRING  ROBLEDO<br/>charlas motivacionales","<a href='centros11f_todos.html#referencia-31' target='_self'>CPR Compañía de María Ferrol<\/a><br/>Premios Xoana de Lestonnac<br/>Entrega premio","<a href='centros11f_todos.html#referencia-35' target='_self'>EEI FERNANDO VILLALÓN<\/a><br/>\"Escucha mi voz\"<br/>Taller;CHARLA 3 chicas ingenieras industriales, andaluzas","<a href='centros11f_todos.html#referencia-36' target='_self'>Centro San Luis<\/a><br/>Jornadas ZIENTXI-K<br/>Taller;Exposición;Podcast","<a href='centros11f_todos.html#referencia-39' target='_self'>IES ANDALÁN<\/a><br/>LAS CIENTÍFICAS DEL ANDALÁN<br/>Exposición;Entrevistas","<a href='centros11f_todos.html#referencia-45' target='_self'>Institut  Can Peixauet<\/a><br/>Tecnologia i dones  <br/>Charla","<a href='centros11f_todos.html#referencia-51' target='_self'>IES Lope de Vega<\/a><br/>I Congreso IES Lope de Vega Investigadoras ODS<br/>Congreso","<a href='centros11f_todos.html#referencia-52' target='_self'>JUAN XXIII<\/a><br/>EL PODER DE ELLAS: INSPIRANDO GENERACIONES<br/>Exposición","<a href='centros11f_todos.html#referencia-63' target='_self'>IES JÁNDULA<\/a><br/>Poner en valor la figura de Rasalind Franklin con actividades con el alumnado : análisis de saliva para estudiar el ADN<br/>Taller","<a href='centros11f_todos.html#referencia-64' target='_self'>CEIP DANIEL VÁZQUEZ DIAZ. MADRID<\/a><br/>CONOCIMIENTO DEL 11 DE FEBRERO<br/>Taller;PRESENTACIÓN 11F","<a href='centros11f_todos.html#referencia-68' target='_self'>IES FERNANDO III<\/a><br/>IES FERNANDO III, LANZADERA DE CIENTÍFICAS E INGENIERAS<br/>Entrevista","<a href='centros11f_todos.html#referencia-72' target='_self'>IES Villanueva de Gállego<\/a><br/>Feria de ciencias<br/>Congreso científico","<a href='centros11f_todos.html#referencia-73' target='_self'>ceip pedro garfias<\/a><br/>nos gustaría recibir talleres<br/>Taller","<a href='centros11f_todos.html#referencia-78' target='_self'>Ceipso María Moliner<\/a><br/>Jornadas mujer y niña en la ciencia<br/>Exposición","<a href='centros11f_todos.html#referencia-79' target='_self'>IES Josep de Ribera<\/a><br/>Vendrá la científica Mercedes Boronat Investigador Cientifico CSIC Instituto de Tecnología Química, UPV-CSIC<br/>Taller","<a href='centros11f_todos.html#referencia-80' target='_self'>Ceip Santa Catalina<\/a><br/>Mini ferias de ciencia / Día de la mujer en la ciencia<br/>Taller;Exposición","<a href='centros11f_todos.html#referencia-81' target='_self'>CEIP MONTECANAL<\/a><br/>Decoración de hall y pasillos con temática 11 F.<br/>Exposición","<a href='centros11f_todos.html#referencia-82' target='_self'>CEIP CIUDAD DEL SOL <\/a><br/>CONOCIENDO CIÉNTIFICAS ANDALUZAS<br/>Proyecto","<a href='centros11f_todos.html#referencia-83' target='_self'>Reina Violant<\/a><br/>Setmana de la Ciència<br/>Taller;Exposición","<a href='centros11f_todos.html#referencia-84' target='_self'>CEIP VIRXE DA PENA DA SELA<\/a><br/>11Febreiro experimenta coa ciencia.<br/>MURAL DE MULLERES CIENTÍFICAS E DIVULGACIÓN DE EXPERIMENTOS CIENTÍFICOS","<a href='centros11f_todos.html#referencia-86' target='_self'>IES MURGI<\/a><br/>Charlas entorno al 11F  y exposición mujeres que abrieron puertas <br/>Taller;Exposición","<a href='centros11f_todos.html#referencia-87' target='_self'>IES Burguillos<\/a><br/>La Mujer siempre hizo Ciencia<br/>Charla-Taller","<a href='centros11f_todos.html#referencia-91' target='_self'>CEIP TERESA DE CALCUTA<\/a><br/>charla/taller STEM<br/>Taller;Exposición","<a href='centros11f_todos.html#referencia-93' target='_self'>IES Lola Flores<\/a><br/>Charla coloquio salidas profesionales STEM<br/>Charla coloquio","<a href='centros11f_todos.html#referencia-103' target='_self'>IES VIRREY MORCILLO<\/a><br/>MUJERES DE CIENCIAS. CONCURSO DE CARTELES<br/>Exposición;CONCURSO CARTELES","<a href='centros11f_todos.html#referencia-105' target='_self'>Colegio Salesiano \"San Ignacio\"<\/a><br/>I CONCURSO ESCOLAR INFOGRAFIAS \"MUJERES DE CIENCIA\"<br/>Exposición","<a href='centros11f_todos.html#referencia-106' target='_self'>Colegio San Agustín<\/a><br/>SUPERCIENTÍFICAS Y SUPERCIENTÍFICOS: EL CUERPO SANO ES NUESTRA MISIÓN<br/>Taller","<a href='centros11f_todos.html#referencia-113' target='_self'>Ieso 4 de junio<\/a><br/>Mujeres científicas de nuestro entorno<br/>Exposición;Proyecto","<a href='centros11f_todos.html#referencia-130' target='_self'>CEPA SAN ANTONIO<\/a><br/>Concurso de creación de camisetas y tazas para el 11F<br/>CONCURSO ORGANIZADO POR EL DEPARTAMENTO CIENTÍFICO-TECNOLÓGICO","<a href='centros11f_todos.html#referencia-134' target='_self'>IES Ponte Caldelas <\/a><br/>Figuras Ocultas <br/>Exposición;Proyecto","<a href='centros11f_todos.html#referencia-136' target='_self'>IES Leopoldo Queipo <\/a><br/>Semana de la Ciencia<br/>Taller","<a href='centros11f_todos.html#referencia-137' target='_self'>CEIP Sagrado Corazón de Jesús <\/a><br/>Cuidamos el medioambiente con Lorena Rodríguez <br/>Taller","<a href='centros11f_todos.html#referencia-138' target='_self'>IES JOSÉ HIERRO<\/a><br/>CIENCIA EN ACCIÓN<br/>Taller","<a href='centros11f_todos.html#referencia-139' target='_self'>San Antonio<\/a><br/>\"Premio a una investigadora que salva vidas\"<br/>Vídeo, cuento, debate y mural.","<a href='centros11f_todos.html#referencia-140' target='_self'>Colegio San Francisco y Santo Domingo<\/a><br/>Referentes STEM<br/>Taller;Charla- actividad","<a href='centros11f_todos.html#referencia-143' target='_self'>IES RAMÓN MENÉNDEZ PIDAL ZALAETA, CLUB DE CIENCIA Y TECNOLOGÍA ZALATECNO<\/a><br/>Concurso 11F<br/>Proyecto","<a href='centros11f_todos.html#referencia-144' target='_self'>club de ciencia y tecnología ZALATECNO, IES MENÉNDEZ PIDAL ZALAETA (A CORUÑA)<\/a><br/>WEN STEAM11F ZALATECNO<br/>Proyecto","<a href='centros11f_todos.html#referencia-145' target='_self'>Colegio San José FESD en Getafe<\/a><br/>Un día con una científica<br/>Taller","<a href='centros11f_todos.html#referencia-146' target='_self'>IES Valmayor<\/a><br/>Mujer y Ciencia en el IES Valmayor<br/>Conferencias ","<a href='centros11f_todos.html#referencia-148' target='_self'>IES Padre Feijoo<\/a><br/>Talleres 11F<br/>Taller;","<a href='centros11f_todos.html#referencia-151' target='_self'>CEIP Reyes Católicos <\/a><br/>Nos empapamos de ciencia con:<br/>Proyecto","<a href='centros11f_todos.html#referencia-152' target='_self'>CEIP MIGUEL HERNÁNDEZ<\/a><br/>MUJERES STEM DE NUESTRO ENTORNO<br/>Taller"],null,{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["IES Cardenal Pardo de Tavera","CEIP ÁNGEL LEÓN","CEIP Ángel León","IESO QUERCUS","IES SAN JUAN DE LA CRUZ","ceip Ntra. Señora de Navahonda","CPR Compañía de María Ferrol","EEI FERNANDO VILLALÓN","Centro San Luis","IES ANDALÁN","Institut  Can Peixauet","IES Lope de Vega","JUAN XXIII","IES JÁNDULA","CEIP DANIEL VÁZQUEZ DIAZ. MADRID","IES FERNANDO III","IES Villanueva de Gállego","ceip pedro garfias","Ceipso María Moliner","IES Josep de Ribera","Ceip Santa Catalina","CEIP MONTECANAL","CEIP CIUDAD DEL SOL ","Reina Violant","CEIP VIRXE DA PENA DA SELA","IES MURGI","IES Burguillos","CEIP TERESA DE CALCUTA","IES Lola Flores","IES VIRREY MORCILLO","Colegio Salesiano \"San Ignacio\"","Colegio San Agustín","Ieso 4 de junio","CEPA SAN ANTONIO","IES Ponte Caldelas ","IES Leopoldo Queipo ","CEIP Sagrado Corazón de Jesús ","IES JOSÉ HIERRO","San Antonio","Colegio San Francisco y Santo Domingo","IES RAMÓN MENÉNDEZ PIDAL ZALAETA, CLUB DE CIENCIA Y TECNOLOGÍA ZALATECNO","club de ciencia y tecnología ZALATECNO, IES MENÉNDEZ PIDAL ZALAETA (A CORUÑA)","Colegio San José FESD en Getafe","IES Valmayor","IES Padre Feijoo","CEIP Reyes Católicos ","CEIP MIGUEL HERNÁNDEZ"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[28.13843718869253,43.53835844386122],"lng":[-15.43221818016051,2.221749913314473]}},"evals":[],"jsHooks":[]}</script>
+<p><br/></p>
+</div>
+<div id="tabla-centros11f" class="section level3">
+<h3>Tabla Centros11F</h3>
+<p>En esta tabla podéis consultar las actividades programadas por los
+centros educativos por provincia, municipio, tipo de actividad, etc.
+Podéis filtrar por varios criterios desde la fila superior (aparecerá
+una <strong>X</strong> en las columnas que tengan el filtro
+activado).</p>
+<p>Si pincháis en el nombre del centro podréis acceder a más información
+útil.</p>
+<p><br/></p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0d58f3c6afa103d621df" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0d58f3c6afa103d621df">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["<a href='centros11f_todos.html#referencia-0' target='_self'>IES Cardenal Pardo de Tavera<\/a>","<a href='centros11f_todos.html#referencia-1' target='_self'>CEIP ÁNGEL LEÓN<\/a>","<a href='centros11f_todos.html#referencia-2' target='_self'>CEIP Ángel León<\/a>","<a href='centros11f_todos.html#referencia-22' target='_self'>IESO QUERCUS<\/a>","<a href='centros11f_todos.html#referencia-23' target='_self'>IES SAN JUAN DE LA CRUZ<\/a>","<a href='centros11f_todos.html#referencia-25' target='_self'>ceip Ntra. Señora de Navahonda<\/a>","<a href='centros11f_todos.html#referencia-31' target='_self'>CPR Compañía de María Ferrol<\/a>","<a href='centros11f_todos.html#referencia-35' target='_self'>EEI FERNANDO VILLALÓN<\/a>","<a href='centros11f_todos.html#referencia-36' target='_self'>Centro San Luis<\/a>","<a href='centros11f_todos.html#referencia-39' target='_self'>IES ANDALÁN<\/a>","<a href='centros11f_todos.html#referencia-45' target='_self'>Institut  Can Peixauet<\/a>","<a href='centros11f_todos.html#referencia-51' target='_self'>IES Lope de Vega<\/a>","<a href='centros11f_todos.html#referencia-52' target='_self'>JUAN XXIII<\/a>","<a href='centros11f_todos.html#referencia-63' target='_self'>IES JÁNDULA<\/a>","<a href='centros11f_todos.html#referencia-64' target='_self'>CEIP DANIEL VÁZQUEZ DIAZ. MADRID<\/a>","<a href='centros11f_todos.html#referencia-68' target='_self'>IES FERNANDO III<\/a>","<a href='centros11f_todos.html#referencia-72' target='_self'>IES Villanueva de Gállego<\/a>","<a href='centros11f_todos.html#referencia-73' target='_self'>ceip pedro garfias<\/a>","<a href='centros11f_todos.html#referencia-78' target='_self'>Ceipso María Moliner<\/a>","<a href='centros11f_todos.html#referencia-79' target='_self'>IES Josep de Ribera<\/a>","<a href='centros11f_todos.html#referencia-80' target='_self'>Ceip Santa Catalina<\/a>","<a href='centros11f_todos.html#referencia-81' target='_self'>CEIP MONTECANAL<\/a>","<a href='centros11f_todos.html#referencia-82' target='_self'>CEIP CIUDAD DEL SOL <\/a>","<a href='centros11f_todos.html#referencia-83' target='_self'>Reina Violant<\/a>","<a href='centros11f_todos.html#referencia-84' target='_self'>CEIP VIRXE DA PENA DA SELA<\/a>","<a href='centros11f_todos.html#referencia-86' target='_self'>IES MURGI<\/a>","<a href='centros11f_todos.html#referencia-87' target='_self'>IES Burguillos<\/a>","<a href='centros11f_todos.html#referencia-91' target='_self'>CEIP TERESA DE CALCUTA<\/a>","<a href='centros11f_todos.html#referencia-93' target='_self'>IES Lola Flores<\/a>","<a href='centros11f_todos.html#referencia-103' target='_self'>IES VIRREY MORCILLO<\/a>","<a href='centros11f_todos.html#referencia-105' target='_self'>Colegio Salesiano \"San Ignacio\"<\/a>","<a href='centros11f_todos.html#referencia-106' target='_self'>Colegio San Agustín<\/a>","<a href='centros11f_todos.html#referencia-113' target='_self'>Ieso 4 de junio<\/a>","<a href='centros11f_todos.html#referencia-130' target='_self'>CEPA SAN ANTONIO<\/a>","<a href='centros11f_todos.html#referencia-134' target='_self'>IES Ponte Caldelas <\/a>","<a href='centros11f_todos.html#referencia-136' target='_self'>IES Leopoldo Queipo <\/a>","<a href='centros11f_todos.html#referencia-137' target='_self'>CEIP Sagrado Corazón de Jesús <\/a>","<a href='centros11f_todos.html#referencia-138' target='_self'>IES JOSÉ HIERRO<\/a>","<a href='centros11f_todos.html#referencia-139' target='_self'>San Antonio<\/a>","<a href='centros11f_todos.html#referencia-140' target='_self'>Colegio San Francisco y Santo Domingo<\/a>","<a href='centros11f_todos.html#referencia-143' target='_self'>IES RAMÓN MENÉNDEZ PIDAL ZALAETA, CLUB DE CIENCIA Y TECNOLOGÍA ZALATECNO<\/a>","<a href='centros11f_todos.html#referencia-144' target='_self'>club de ciencia y tecnología ZALATECNO, IES MENÉNDEZ PIDAL ZALAETA (A CORUÑA)<\/a>","<a href='centros11f_todos.html#referencia-145' target='_self'>Colegio San José FESD en Getafe<\/a>","<a href='centros11f_todos.html#referencia-146' target='_self'>IES Valmayor<\/a>","<a href='centros11f_todos.html#referencia-148' target='_self'>IES Padre Feijoo<\/a>","<a href='centros11f_todos.html#referencia-151' target='_self'>CEIP Reyes Católicos <\/a>","<a href='centros11f_todos.html#referencia-152' target='_self'>CEIP MIGUEL HERNÁNDEZ<\/a>"],["Zamora","Madrid","Madrid","Salamanca","Jaén","Madrid","A Coruña","Sevilla","Bizkaia","Zaragoza","Barcelona","Madrid","Valencia/València","Jaén","Madrid","Valencia/València","Zaragoza","Sevilla","Madrid","Valencia/València","Las Palmas","Zaragoza","Sevilla","Barcelona","Ourense","Almería","Sevilla","Madrid","Cádiz","Albacete","Cádiz","Zaragoza","Cuenca","Badajoz","Pontevedra","Melilla","Badajoz","Cantabria","León","Valencia/València","A Coruña","A Coruña","Madrid","Madrid","Asturias","Granada","Madrid"],["49800, Toro","28770, COLMENAR VIEJO","28770, Colmenar Viejo","37190, Terradillos","23400, ÚBEDA","28294, Robledo de Chavela","15403, Ferrol","41015, SEVILLA","48011, Bilbao","50003, Zaragoza","8923, Santa Coloma de Gramenet","28015, Madrid","46100, BURJASSOT","23740, Andújar","28039, MADRID","46620, AYORA","50830, Villanueva de Gállego","41009, sevilla","28293, Villanueva de la Cañada","46800, Xativa ","35007, Las Palmas","50012, ZARAGOZA","41400, ÉCIJA","8012, Barcelona","32530, O IRIXO","4700, EL EJIDO ","41220,  Burguillos","28702, SAN SEBASTIAN DE LOS REYES","11405, Jerez","2600, VILLARROBLEDO","11500, Cádiz","50008, Zaragoza","16300, Cañete","6200, ALMENDRALEJO","36820, Ponte Caldelas ","52003, Melilla","6475, Oliva de Mérida ","39540, SAN VICENTE DE LA BARQUERA","24401, Ponferrada","46191, Vilamarxant","15002, A CORUÑA","15002, A CORUÑA","28902, Getafe","28210, Valdemorillo","33213, Gijón","18320, Santa Fe","28850, TORREJÓN DE ARDOZ"],["Charla ","Taller","Taller","Charla","Exposición;Proyecto;CONFERENCIA","charlas motivacionales","Entrega premio","Taller;CHARLA 3 chicas ingenieras industriales, andaluzas","Taller;Exposición;Podcast","Exposición;Entrevistas","Charla","Congreso","Exposición","Taller","Taller;PRESENTACIÓN 11F","Entrevista","Congreso científico","Taller","Exposición","Taller","Taller;Exposición","Exposición","Proyecto","Taller;Exposición","MURAL DE MULLERES CIENTÍFICAS E DIVULGACIÓN DE EXPERIMENTOS CIENTÍFICOS","Taller;Exposición","Charla-Taller","Taller;Exposición","Charla coloquio","Exposición;CONCURSO CARTELES","Exposición","Taller","Exposición;Proyecto","CONCURSO ORGANIZADO POR EL DEPARTAMENTO CIENTÍFICO-TECNOLÓGICO","Exposición;Proyecto","Taller","Taller","Taller","Vídeo, cuento, debate y mural.","Taller;Charla- actividad","Proyecto","Proyecto","Taller","Conferencias ","Taller;","Proyecto","Taller"],["\"Aislamiento y caracterización de bacterias con potencial como bioinoculantes\"","Centro 11F- 2025","\"¿Qué hace un médico?\"","Charla con científicas","LA MUJER Y LA NIÑA EN  LA GEOLOGÍA","INSPIRING  ROBLEDO","Premios Xoana de Lestonnac","\"Escucha mi voz\"","Jornadas ZIENTXI-K","LAS CIENTÍFICAS DEL ANDALÁN","Tecnologia i dones  ","I Congreso IES Lope de Vega Investigadoras ODS","EL PODER DE ELLAS: INSPIRANDO GENERACIONES","Poner en valor la figura de Rasalind Franklin con actividades con el alumnado : análisis de saliva para estudiar el ADN","CONOCIMIENTO DEL 11 DE FEBRERO","IES FERNANDO III, LANZADERA DE CIENTÍFICAS E INGENIERAS","Feria de ciencias","nos gustaría recibir talleres","Jornadas mujer y niña en la ciencia","Vendrá la científica Mercedes Boronat Investigador Cientifico CSIC Instituto de Tecnología Química, UPV-CSIC","Mini ferias de ciencia / Día de la mujer en la ciencia","Decoración de hall y pasillos con temática 11 F.","CONOCIENDO CIÉNTIFICAS ANDALUZAS","Setmana de la Ciència","11Febreiro experimenta coa ciencia.","Charlas entorno al 11F  y exposición mujeres que abrieron puertas ","La Mujer siempre hizo Ciencia","charla/taller STEM","Charla coloquio salidas profesionales STEM","MUJERES DE CIENCIAS. CONCURSO DE CARTELES","I CONCURSO ESCOLAR INFOGRAFIAS \"MUJERES DE CIENCIA\"","SUPERCIENTÍFICAS Y SUPERCIENTÍFICOS: EL CUERPO SANO ES NUESTRA MISIÓN","Mujeres científicas de nuestro entorno","Concurso de creación de camisetas y tazas para el 11F","Figuras Ocultas ","Semana de la Ciencia","Cuidamos el medioambiente con Lorena Rodríguez ","CIENCIA EN ACCIÓN","\"Premio a una investigadora que salva vidas\"","Referentes STEM","Concurso 11F","WEN STEAM11F ZALATECNO","Un día con una científica","Mujer y Ciencia en el IES Valmayor","Talleres 11F","Nos empapamos de ciencia con:","MUJERES STEM DE NUESTRO ENTORNO"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Centro<\/th>\n      <th>Provincia<\/th>\n      <th>Localidad<\/th>\n      <th>Tipo actividad<\/th>\n      <th>Título<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<p>Última actualización: 2025-02-05</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
